@@ -1,0 +1,36 @@
+.mdl-card__media {
+    background-color: whitesmoke;
+}
+
+.mdl-card__title {
+    background-color: whitesmoke;
+    padding: 0px;
+    padding-left: 16px;
+    padding-bottom: 5px;
+}
+
+.mdl-card__supporting-text {
+    background-color: whitesmoke;
+}   
+
+#pokedex-container {
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#shiny-switch {
+    width: 5%;
+    margin: 0 auto;
+}
+
+.mdl-card {
+    float: left;
+    margin: 25px;
+}
+
+.missing {
+    background-color: lightgray;
+    opacity: .4;
+}
