@@ -1,10 +1,17 @@
 const nationalDexPokemon = JSON.parse(nationalPokedex);
 const normalDexPokemon = JSON.parse(normalDex);
 const shinyDexPokemon = JSON.parse(shinyDex);
+const paldeaDexPokemon = JSON.parse(paldeaDex);
 
 var pokemon = nationalDexPokemon.pokemon;
 var pokedex = normalDexPokemon.pokemon;
 var shinydex = shinyDexPokemon.pokemon;
+var paldeapokedex = paldeaDexPokemon.pokemon;
+
+console.log(paldeaDexPokemon);
+console.log(typeof paldeaDexPokemon);
+console.log(paldeaDexPokemon.pokemon);
+console.log(typeof paldeaDexPokemon.pokemon); 
 
 function loadPokedex() {
     var pokedexContainer = document.getElementById("pokedex-cards-container");
@@ -34,9 +41,23 @@ function loadPokedex() {
         pokemonCard.appendChild(pokemonNormalSpriteContainer);
 
         //create tags for games each pokemon is in
-        //var pokemonTextContainer = document.createElement("div");
-        //pokemonTextContainer.className = "mdl-card__supporting-text mdl-card--border";
-        //pokemonCard.appendChild(pokemonTextContainer);
+        var pokemonTextContainer = document.createElement("div");
+        pokemonTextContainer.className = "mdl-card__supporting-text mdl-card--border";
+        
+        var stringOfNumber = (pokemon[i].Number).toString();
+        var paldeaDexEntry = paldeaDexPokemon.stringOfNumber;
+        
+        if(paldeaDexEntry != undefined){
+            var paldeaChip = document.createElement("span");
+            paldeaChip.className = "mdl-chip";
+            var paldeaChipText = document.createElement("span");
+            paldeaChipText.className = "mdl-chip__text";
+            paldeaChipText.innerHTML = "Scarlet/Violet";
+            paldeaChip.appendChild(paldeaChipText);
+            pokemonTextContainer.appendChild(paldeaChip);
+        }
+
+        pokemonCard.appendChild(pokemonTextContainer);
         
         pokedexContainer.appendChild(pokemonCard);
     }
